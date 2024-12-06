@@ -6,7 +6,7 @@ Un jeu de cartes réalisé en tant que projet pour le cours de CSI 2772 (Concept
 ## Sur Linux (Préférablement Ubuntu)
 
 ```
-./Run.sh
+./Run
 ```
 Cette commande compilera et exécutera le programme.
 Assurez-vous d'avoir `g++` installé.
