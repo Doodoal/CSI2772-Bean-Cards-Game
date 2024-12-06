@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 
-// Forward declaration of Card class
+
 class Card;
 
 class Chain_Base {

@@ -1,12 +1,13 @@
 #!/bin/bash
 mainFile="tests/test_player.cpp" # Fichier principal du programme
+outputFile="build/test.exe" # Nom du fichier executable
 
 if command -v g++ > /dev/null 2>&1; then
 
     rm -rf build && mkdir build
 
     
-    outputFile="build/test.exe"
+    
     sources=(   $mainFile
                 "src/Card.cpp"
                 "src/Deck.cpp"
