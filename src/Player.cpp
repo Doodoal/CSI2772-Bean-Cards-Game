@@ -20,12 +20,14 @@ void Player::buyThirdChain() {
 
 
 
-
+//TODO: Enlever le unit test quand c'est terminé
 int main() {
 	cout << "Unit tests - Player Class" << endl;
     cout << "==========================" << endl;
-    cout << "Creating a player named 'Bob' with 5 coins" << endl;
-    Player p("Bob");
+    std::string name;
+    cout << "Enter your name: " << endl;
+    cin >> name;
+    Player p(name);
     cout << "Player name: " << p.getName() << endl;
     cout << "Player coins: " << p.getNumCoins() << endl;
     cout << "Player max chains: " << p.getMaxNumChains() << endl;

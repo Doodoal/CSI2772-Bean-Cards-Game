@@ -1,5 +1,20 @@
 # CSI2772-Bean-Cards-Game
-A Bean Cards chain-and-trade game - Capstone project of CSI 2772 (Programmation en C++), Fall 2024
+Un jeu de cartes réalisé en tant que projet pour le cours de CSI 2772 (Concepts Avançés de Programmation en C++), Automne 2024
 
-# Architecture Design - First version
-![image](https://github.com/user-attachments/assets/ca045289-155e-451c-a947-fd3252ae07c4)
+# Comment Run ce code
+
+## Sur Linux (Préférablement Ubuntu)
+
+```
+./Run.sh
+```
+Cette commande compilera et exécutera le programme.
+Assurez-vous d'avoir `g++` installé.
+
+### Alternative:
+```
+cd src
+g++ *.cpp -o jeuDeCartes.exe
+./jeuDeCartes.exe
+```
+

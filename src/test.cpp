@@ -1,22 +1,16 @@
 #include <iostream>
-#include "Blue.h"
-#include "Chili.h"
-#include "Stink.h"
-#include "Green.h"
-#include "Soy.h"
-#include "Black.h"
-#include "Red.h"
-#include "Garden.h"
+#include "../include/Card.h"
+
 
 int main() {
     Blue blue;
     Chili chili;
     Stink stink;
     Green green;
-    Soy soy;
-    Black black;
+    soy soy;
+    black black;
     Red red;
-    Garden garden;
+    garden garden;
 
     std::cout << "Nom : " << blue.getName() << ", Affichage : " << blue << std::endl;
     std::cout << "Nom : " << chili.getName() << ", Affichage : " << chili << std::endl;

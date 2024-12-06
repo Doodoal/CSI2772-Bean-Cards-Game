@@ -21,20 +21,14 @@ class Player {
 
    public:
         //Constructeur 
-        Player(std::string& name) : name(name), numCoins(0) {//Aucune pièce au début
+        Player(const std::string& name) : name(name), numCoins(0) {//Aucune pièce au début
             //this->chains = vector<Chain>();
             if (maxNumChains == 0) { // Si on a pas encore initialisé maxNumChains	
             maxNumChains = 2;   // Par défaut, 2 chaines au maximum pour tous les joueurs
             }
          }
 
-        Player(std::string name) : name(name), numCoins(0) {//Aucune pièce au début
-            //this->chains = vector<Chain>();
-            if (maxNumChains == 0) { // Si on a pas encore initialisé maxNumChains	
-            maxNumChains = 2;   // Par défaut, 2 chaines au maximum pour tous les joueurs
-            }
-         }
-         
+    
 
 
         //Déclarations avec inline definitions

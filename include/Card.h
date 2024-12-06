@@ -34,4 +34,88 @@ public:
     }
 };
 
+
+// Classes dérivées de la classe abstraite
+
+class black : public Card {
+public:
+    int getCardsPerCoin(int coins) const override;
+    std::string getName() const override;
+    void print(std::ostream& out) const override;
+    ~black() = default;
+};
+
+
+
+
+class Blue : public Card {
+public:
+
+     // Implémente le nombre de cartes nécessaires pour gagner des pièces
+    int getCardsPerCoin(int coins) const override;
+
+    // Renvoie le nom complet de la carte
+    std::string getName() const override;
+
+    //insère le premier caractère de la carte dans le flux de sortie fourni en argument.
+
+    void print(std::ostream& out) const override;
+
+    ~Blue()  = default; 
+
+    
+};
+
+
+class Chili : public Card {
+public:
+    int getCardsPerCoin(int coins) const override;
+    std::string getName() const override;
+    void print(std::ostream& out) const override;
+    ~Chili() = default;
+};
+
+class garden : public Card {
+public:
+    int getCardsPerCoin(int coins) const override;
+    std::string getName() const override;
+    void print(std::ostream& out) const override;
+    ~garden() = default;
+};
+
+class Green : public Card {
+public:
+    int getCardsPerCoin(int coins) const override;
+    std::string getName() const override;
+    void print(std::ostream& out) const override;
+    ~Green() = default;
+};
+
+
+class Red : public Card {
+public:
+    int getCardsPerCoin(int coins) const override;
+    std::string getName() const override;
+    void print(std::ostream& out) const override;
+    ~Red() = default;
+};
+
+
+class soy : public Card {
+public:
+    int getCardsPerCoin(int coins) const override;
+    std::string getName() const override;
+    void print(std::ostream& out) const override;
+    ~soy() = default;
+};
+
+
+class Stink : public Card {
+public:
+    int getCardsPerCoin(int coins) const override;
+    std::string getName() const override;
+    void print(std::ostream& out) const override;
+    ~Stink() = default;
+};
+
 #endif

@@ -12,10 +12,10 @@ CardFactory::CardFactory() {
     for (int i = 0; i < 18; ++i) allCards.push_back(new Chili());
     for (int i = 0; i < 16; ++i) allCards.push_back(new Stink());
     for (int i = 0; i < 14; ++i) allCards.push_back(new Green());
-    for (int i = 0; i < 12; ++i) allCards.push_back(new Soy());
-    for (int i = 0; i < 10; ++i) allCards.push_back(new Black());
+    for (int i = 0; i < 12; ++i) allCards.push_back(new soy());
+    for (int i = 0; i < 10; ++i) allCards.push_back(new black());
     for (int i = 0; i < 8; ++i) allCards.push_back(new Red());
-    for (int i = 0; i < 6; ++i) allCards.push_back(new Garden());
+    for (int i = 0; i < 6; ++i) allCards.push_back(new garden());
 }
 
 // Renvoie l'instance unique de CardFactory
@@ -35,10 +35,10 @@ Deck CardFactory::getDeck() const {
     for (int i = 0; i < 18; ++i) deck.push_back(new Chili());
     for (int i = 0; i < 16; ++i) deck.push_back(new Stink());
     for (int i = 14; i > 0; --i) deck.push_back(new Green());
-    for (int i = 12; i > 0; --i) deck.push_back(new Soy());
-    for (int i = 10; i > 0; --i) deck.push_back(new Black());
+    for (int i = 12; i > 0; --i) deck.push_back(new soy());
+    for (int i = 10; i > 0; --i) deck.push_back(new black());
     for (int i = 8; i > 0; --i) deck.push_back(new Red());
-    for (int i = 6; i > 0; --i) deck.push_back(new Garden());
+    for (int i = 6; i > 0; --i) deck.push_back(new garden());
 
     // Mélange les cartes avec une graine basée sur un dispositif aléatoire et l'horloge système
     std::random_device rd;

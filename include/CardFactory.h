@@ -6,10 +6,10 @@
 #include "Chili.h"
 #include "Stink.h"
 #include "Green.h"
-#include "Soy.h"
-#include "Black.h"
+#include "soy.h"
+#include "black.h"
 #include "Red.h"
-#include "Garden.h"
+#include "garden.h"
 #include "Deck.h"
 #include <vector>
 #include <algorithm>
