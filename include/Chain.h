@@ -27,6 +27,35 @@ public:
         }
     }
 
+    // Constructeur à partir d'un vecteur de cartes
+    Chain(std::vector<T*> cards) : cards(cards) {}
+
+    //Chain(const Chain_Base&): Chain() {}
+
+    //Constructeur de copie
+    Chain(const Chain& other) {
+        for (auto card : other.cards) {
+            cards.push_back(new T(*card));
+        }
+    }
+
+    // Opérateur d'assignation
+    Chain& operator=(const Chain& other) {
+        if (this != &other) {
+            for (auto card : cards) {
+                delete card;
+            }
+            cards.clear();
+
+            for (auto card : other.cards) {
+                cards.push_back(new T(*card));
+            }
+        }
+        return *this;
+    }
+
+
+
     // Ajoute une carte à la chaîne
     void addCard(Card* card) override {
         T* specificCard = dynamic_cast<T*>(card);

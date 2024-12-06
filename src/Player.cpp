@@ -17,5 +17,17 @@ void Player::buyThirdChain() {
     cout << "# Pieces restantes: " << numCoins << endl;
 }
 
+std::ostream& operator<<(std::ostream& os, const Player& player) {
+    os << player.name <<"   "<<   player.numCoins << " coins" << endl;
+    for (const auto& chain : player.chains) {
+        chain->print(os);
+    }
+    return os;
+}
+
+
+
+
+
 
 
