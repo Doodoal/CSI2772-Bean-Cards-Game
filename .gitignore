@@ -1,0 +1,63 @@
+# General files to ignore
+*.log
+*.tmp
+*.swp
+*~
+
+# Compiled object files
+*.o
+*.obj
+
+# Compiled binary files
+*.exe
+*.out
+*.app
+
+# Build directories
+build/
+dist/
+Debug/
+Release/
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# IDE-specific files
+.vscode/
+.idea/
+*.code-workspace
+
+# Visual Studio files
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.user
+*.ncb
+*.suo
+*.pdb
+*ilk
+ipch/
+*.obj
+*.pch
+
+# Qt Creator
+*.pro.user
+*.qmake.stash
+*.pro.user.*
+
+# CodeBlocks files
+*.layout
+*.cbp
+
+# Eclipse files
+*.project
+*.cproject
+
+# MacOS-specific files
+.DS_Store
+
+# Windows-specific files
+Thumbs.db
