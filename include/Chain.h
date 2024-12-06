@@ -4,6 +4,7 @@
 #include "Chain_Base.h"
 #include "Card.h"
 #include "IllegalType.h"
+#include "CardFactory.h"
 #include <vector>
 #include <stdexcept>
 #include <string>

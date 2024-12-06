@@ -1,5 +1,5 @@
-#include "CardFactory.h"
-#include "Deck.h"
+#include "../include/CardFactory.h"
+#include "../include/Deck.h"
 #include <chrono>
 
 // Initialise l'instance unique

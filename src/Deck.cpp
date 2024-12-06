@@ -1,5 +1,5 @@
-#include "Deck.h"
-#include "CardFactory.h" // Inclure ici pour la définition complète de CardFactory
+#include "../include/Deck.h"
+#include "../include/CardFactory.h" // Inclure ici pour la définition complète de CardFactory
 
 
 // Constructeur à partir d'un istream

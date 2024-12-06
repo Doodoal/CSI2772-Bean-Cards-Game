@@ -1,12 +1,19 @@
 #!/bin/bash
+mainFile="tests/test_player.cpp" # Fichier principal du programme
+
 if command -v g++ > /dev/null 2>&1; then
 
     rm -rf build && mkdir build
 
     
     outputFile="build/test.exe"
-    sources=(   "src/test.cpp" 
+    sources=(   $mainFile
                 "src/Card.cpp"
+                "src/Deck.cpp"
+                "src/Player.cpp"
+                "src/CardFactory.cpp"
+
+               
                 
             )
 
@@ -15,7 +22,8 @@ if command -v g++ > /dev/null 2>&1; then
 
     # Commande de compilation
     command="g++ -o $outputFile $sourcesString"
-
+    echo "---------------------------------"
+    echo "Fichier principal: $mainFile"
     echo "Compilation en cours ..."
     eval $command
 

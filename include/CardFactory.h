@@ -2,14 +2,6 @@
 #define CARDFACTORY_H
 
 #include "Card.h"
-#include "Blue.h"
-#include "Chili.h"
-#include "Stink.h"
-#include "Green.h"
-#include "soy.h"
-#include "black.h"
-#include "Red.h"
-#include "garden.h"
 #include "Deck.h"
 #include <vector>
 #include <algorithm>
