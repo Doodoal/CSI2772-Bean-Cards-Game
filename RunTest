@@ -1,0 +1,56 @@
+#!/bin/bash
+
+read -p "Entrez le nom du fichier de test à exécuter (ex: test_player.cpp): " userInput
+mainFile="tests/$userInput" # Fichier principal du programme
+
+outputFile="build/test.exe" # Nom du fichier executable
+
+if command -v g++ > /dev/null 2>&1; then
+
+    rm -rf build && mkdir build
+
+    
+    
+    sources=(   $mainFile
+                "src/Card.cpp"
+                "src/Deck.cpp"
+                "src/Player.cpp"
+                "src/CardFactory.cpp"
+
+               
+                
+            )
+
+
+    sourcesString=$(printf " %s" "${sources[@]}")
+
+    # Commande de compilation
+    command="g++ -o $outputFile $sourcesString"
+    echo "---------------------------------"
+    echo "Fichier principal: $mainFile"
+    echo "Compilation en cours ..."
+    eval $command
+
+
+    if [ -f "$outputFile" ]; then
+        echo "Compilation reussie."
+        echo "Fichier executable: $outputFile"
+
+        # Run the executable
+        echo "Execution du programme ..."
+        echo "---------------------------------"
+        echo ""
+        
+        
+        ./$outputFile
+    else
+        echo "La compilation a echoue"
+    fi
+
+else
+    echo "g++ n'est pas installe sur votre systeme. Veuillez l'installer pour compiler le programme."
+    echo " Pour installer g++, veuillez executer la commande suivante :"
+    echo "sudo apt-get install g++"
+
+fi
+
