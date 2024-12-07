@@ -20,6 +20,7 @@ class Table{
     CardFactory* factory;
     Deck deck;
     TradeArea tradeArea;
+    
 
     public:
         //Constructeur a partir du nom des joueurs
@@ -29,8 +30,7 @@ class Table{
                                         currentPlayer(1),//Le premier joueurs commence par défaut
                                         dPile(DiscardPile()),
                                         factory(CardFactory::getFactory()){
-                                            deck = factory->getDeck();
-
+                                        deck = factory->getDeck();
                                         }
                                                                                 
         Table(std::istream&, const CardFactory*);

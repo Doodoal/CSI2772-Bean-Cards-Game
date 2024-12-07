@@ -12,6 +12,8 @@ private:
     std::list<Card*> cards; // Conteneur de cartes
 
 public:
+    // Constructeur par défaut
+    TradeArea() = default;
     // Constructeur à partir d'un flux d'entrée
     TradeArea(std::istream& in, const CardFactory* factory);
 
@@ -32,6 +34,10 @@ public:
 
     // Opérateur d'insertion pour afficher les cartes
     friend std::ostream& operator<<(std::ostream& out, const TradeArea& tradeArea);
+
+    // Itérateurs pour parcourir les cartes
+    std::list<Card*>::iterator begin(){ return cards.begin(); }
+    std::list<Card*>::iterator end(){ return cards.end(); }
 };
 
 #endif // TRADEAREA_H

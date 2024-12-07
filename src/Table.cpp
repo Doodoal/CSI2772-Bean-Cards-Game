@@ -55,7 +55,15 @@ std::ostream& saveGame(std::ostream& os, const Table& table){
     os << table.p2 << std::endl;
     os << table.dPile << std::endl;
     os << table.tradeArea << std::endl;
-    os << table.Deck << std::endl;
+    os << table.deck << std::endl;
     return os;
 }
+
+
+
+
+
+
+
+
 

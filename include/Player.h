@@ -9,6 +9,9 @@
 #include <string>
 #include <stdexcept>
 #include "CardFactory.h"
+#include "Deck.h"
+#include "DiscardPile.h"
+#include "TradeArea.h"
 #include <memory>
 #include <typeinfo>
 
@@ -21,15 +24,15 @@ class Player {
     std::string name;
     int numCoins;
     static int maxNumChains; //Tous les joueurs ont le même nombre maximal de chaines
-    std::vector<std::unique_ptr<Chain_Base>> chains; //On store les chaines dans un vecteurs de pointeurs de type Chain_Base
-                                                    //On utilise des pointeurs intelligents pour éviter les fuites de mémoire
+    std::vector<Chain_Base*> chains; //On store les chaines dans un vecteurs de pointeurs de type Chain_Base                          
     Hand hand;
 
     
 
 
    public:
-        //Constructeur 
+        //Constructeur
+        Player(): name("Default"), numCoins(0), chains() {} 
         Player(const std::string& name) : name(name), numCoins(0) , chains(){//Aucune pièce au début
             if (maxNumChains == 0) { // Si on a pas encore initialisé maxNumChains	
             maxNumChains = 2;   // Par défaut, 2 chaines au maximum pour tous les joueurs
@@ -45,6 +48,14 @@ class Player {
         friend std::ostream& operator<<(std::ostream& os, const Player& player);
         void printHand(std::ostream&, bool) const;
         Player(std::istream&, const CardFactory*);
+        void printChains(std::ostream& os) const;
+
+        void play();
+        void sell();
+        void draw(int n, Deck& deck);
+        void discard(Card& card, DiscardPile& discardPile);
+        void discard(int index, DiscardPile& discardPile);
+        void trade(Card&, TradeArea& tradeArea);
 
 
     
@@ -61,7 +72,7 @@ class Player {
         void addToHand(Card* card) { hand += card; }
 
        template <class T> //J'utilise un template pour pouvoir ajouter n'importe quel type de chaines
-        void addChain(std::unique_ptr<Chain<T>> chain) {
+        void addChain(Chain<T>* chain) {
             if (chains.size() == maxNumChains) {
                 throw MaxChainReached(*this);
             } else {
@@ -91,7 +102,7 @@ class Player {
 
                 //Si le joueur n'a pas de chaine de type T, on en crée une nouvelle (si le nombre maximal de chaines n'est pas atteint)
                 try{ 
-                    addChain(std::make_unique<Chain<T>>());
+                    addChain(new Chain<T>());
                     chains.back()->addCard(card);
                     chains.back()->print(std::cout);
                 } catch (MaxChainReached& e) {

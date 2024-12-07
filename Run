@@ -1,5 +1,5 @@
 #!/bin/bash
-mainFile="tests/test_player.cpp" # Fichier principal du programme
+mainFile="src/main.cpp" # Fichier principal du programme
 outputFile="build/jeuDeCartes.exe" # Nom du fichier executable
 
 if command -v g++ > /dev/null 2>&1; then
@@ -15,6 +15,10 @@ if command -v g++ > /dev/null 2>&1; then
                 "src/CardFactory.cpp"
                 "src/Hand.cpp"
                 "src/DiscardPile.cpp"
+                "src/TradeArea.cpp"
+                "src/Table.cpp"
+                
+
 
                
                 

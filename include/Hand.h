@@ -25,6 +25,8 @@ class Hand {
     //Destructeur
     ~Hand();
 
+    
+    int size() const { return cards.size();}
     Hand& operator+=(Card* card);
     Card* play();
     Card* top() const{ return cards.front();}

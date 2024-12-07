@@ -12,9 +12,6 @@ Card* Hand::play(){
         return card;
     }
 
-Hand::Hand(std::istream& in, const CardFactory* factory) {
-    std::cout << "Pas encore implemente" << std::endl;
-}
 
 std::ostream& operator<<(std::ostream& os, const Hand& hand) {
     auto cards = hand.cards;
@@ -48,6 +45,14 @@ Hand& Hand::operator+=(Card* card){
         cards.push(card);
         return *this;
     }
+
+// Constructeur à partir d'un flux istream
+Hand::Hand(std::istream& in, const CardFactory* factory) {
+    std::string cardName;
+    while (in >> cardName) {
+        cards.push(factory->getCard(cardName));
+    }
+}
 
  Hand::Hand(const Hand& other){
         auto temp = other.cards;
