@@ -16,7 +16,8 @@ if command -v g++ > /dev/null 2>&1; then
                 "src/Deck.cpp"
                 "src/Player.cpp"
                 "src/CardFactory.cpp"
-
+                "src/Hand.cpp"
+                "src/DiscardPile.cpp"
                
                 
             )

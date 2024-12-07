@@ -1,7 +1,7 @@
 #include <iostream>
 #include <sstream>
-#include "DiscardPile.h"
-#include "CardFactory.h"
+#include "../include/DiscardPile.h"
+#include "../include/CardFactory.h"
 
 int main() {
     CardFactory* factory = CardFactory::getFactory();

@@ -1,4 +1,4 @@
-#include "DiscardPile.h"
+#include "../include/DiscardPile.h"
 
 // Constructeur qui lit les cartes d'un fichier
 DiscardPile::DiscardPile(std::istream& in, const CardFactory* factory) {

@@ -25,6 +25,19 @@ std::ostream& operator<<(std::ostream& os, const Player& player) {
     return os;
 }
 
+Player::Player(std::istream&, const CardFactory*) {
+    cout << "Pas encore implemente" << endl;
+}
+
+void Player::printHand(std::ostream& os, bool all_cards) const {
+    if (all_cards){
+        os << hand<<std::endl;
+    }
+    else {
+        os << *hand.top() << std::endl;
+    }
+}
+
 
 
 

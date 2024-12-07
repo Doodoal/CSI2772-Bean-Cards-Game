@@ -76,6 +76,14 @@ int main() {
     p.addCardtoChain(new Blue());
     p+= p[0].sell();
     cout << p << endl;
+    p.printHand(std::cout, true);
+
+    p.addToHand(new Blue());
+    p.printHand(std::cout, true);
+    p.addToHand(new Red());
+    p.printHand(std::cout, true);
+    p.printHand(std::cout, false);
+
 
    
 

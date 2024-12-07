@@ -11,6 +11,10 @@ private:
     std::vector<Card*> pile; // Conteneur pour les cartes
 
 public:
+
+    // Constructeur par défaut
+    DiscardPile() = default;
+    
     // Constructeur à partir d'un flux d'entrée
     DiscardPile(std::istream& in, const CardFactory* factory);
 

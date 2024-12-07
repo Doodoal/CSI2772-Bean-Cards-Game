@@ -3,13 +3,14 @@
 
 
 #include <vector>
-//#include "Hand.h"
+#include "Hand.h"
 #include "Chain.h"
 #include <iostream>
 #include <string>
 #include <stdexcept>
 #include "CardFactory.h"
 #include <memory>
+#include <typeinfo>
 
 class MaxChainReached;
 class NotEnoughCoins;
@@ -22,6 +23,9 @@ class Player {
     static int maxNumChains; //Tous les joueurs ont le même nombre maximal de chaines
     std::vector<std::unique_ptr<Chain_Base>> chains; //On store les chaines dans un vecteurs de pointeurs de type Chain_Base
                                                     //On utilise des pointeurs intelligents pour éviter les fuites de mémoire
+    Hand hand;
+
+    
 
 
    public:
@@ -31,6 +35,17 @@ class Player {
             maxNumChains = 2;   // Par défaut, 2 chaines au maximum pour tous les joueurs
             }
          }
+
+
+        //Destructeur
+        ~Player() { chains.clear();} //On a pas vraiment besoin de destructeur, vu que l'on a que deux joueurs.
+
+        //Déclarations simples (Voir src/Player.cpp pour les définitions)
+        void buyThirdChain();
+        friend std::ostream& operator<<(std::ostream& os, const Player& player);
+        void printHand(std::ostream&, bool) const;
+        Player(std::istream&, const CardFactory*);
+
 
     
 
@@ -43,6 +58,7 @@ class Player {
         void setMaxNumChains(int n) { maxNumChains = n; }
         Player& operator+=(int ncoins) { numCoins = numCoins + ncoins; return *this; }
         Chain_Base& operator[](int i) { return *chains[i]; }
+        void addToHand(Card* card) { hand += card; }
 
        template <class T> //J'utilise un template pour pouvoir ajouter n'importe quel type de chaines
         void addChain(std::unique_ptr<Chain<T>> chain) {
@@ -85,16 +101,6 @@ class Player {
                 
             }
         }
-
-
-
-        //Déclarations simples (Voir src/Player.cpp pour les définitions)
-        void buyThirdChain();
-        friend std::ostream& operator<<(std::ostream& os, const Player& player);
-        void printHand(std::ostream&, bool) const;
-        //Player(istream&, const CardFactory*);
-        
-        
 
 
 
