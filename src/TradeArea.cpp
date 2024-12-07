@@ -1,4 +1,4 @@
-#include "TradeArea.h"
+#include "../include/TradeArea.h"
 
 // Constructeur à partir d'un flux d'entrée
 TradeArea::TradeArea(std::istream& in, const CardFactory* factory) {
