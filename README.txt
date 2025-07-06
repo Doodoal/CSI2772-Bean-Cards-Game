@@ -1,9 +1,9 @@
 Nom étudiant : Adjmal Younoussa 
-Numéro d’étudiant : 300203179
+Numéro d’étudiant : [REDACTED]
 Code du cours : CSI2772A
 ---------------------------------
 Nom étudiant : Yephihy Noura Offia
-Numéro d’étudiant : 300201661
+Numéro d’étudiant : [REDACTED]
 Code du cours : CSI2772A
 ---------------------------------
 
